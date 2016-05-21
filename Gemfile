@@ -1,48 +1,14 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2'
+gem 'rails', '4.2.6'
+gem 'bootstrap-sass', '~> 3.3.6'
 
-#Parser
+# User Slim for templates
 gem 'slim-rails'
 
-# Font Awesome Icons
-gem 'font-awesome-rails'
-
-# JSON Parser
-# gem 'json'
-
-# Access Ruby Variables from Javascript
-# gem 'gon'
-
-group :development do
-  gem 'annotate'
-  gem 'awesome_print'
-  gem 'quiet_assets'
-  gem 'better_errors'
-  gem 'binding_of_caller'
-
-  gem 'yard'
-  gem 'rails_layout'
-end
-
-group :test, :development do
-  # usamos SQLite para desarollo y testing
-  gem 'sqlite3'
-end
-
-group :production do
-  # gema requisito de Heroku
-  gem 'rails_12factor'
-  # usamos PostgresSQL para producción, por requisito de Heroku
-  gem 'pg'
-  # otro webserver mejor para producción
-  #gem 'unicorn'
-end
-
-
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.2'
+gem 'sass-rails', '>= 3.2'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -57,7 +23,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem 'turbolinks', '~> 5.0.0.beta'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -68,15 +34,28 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.2'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :development, :test do
+  gem 'byebug',      '3.4.0'
+  gem 'spring',      '1.1.3'
+  gem 'annotate'
+  gem 'awesome_print'
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
+  # usamos SQLite para desarollo y testing
+  gem 'sqlite3'
+end
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :production do
+  gem 'rails_12factor', '0.0.2'
+  gem 'puma',           '2.11.1'
+  gem 'pg',             '0.17.1'
+end
+
+# Deployment to an actual server
+# gem 'mina'
+
+# Access Ruby Variables from JavaScript.
+gem 'gon'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
