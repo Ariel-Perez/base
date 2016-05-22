@@ -1,0 +1,30 @@
+html
+head
+  title Base Application
+  #= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+  #= javascript_include_tag "application", "data-turbolinks-track" => true
+
+  = stylesheet_link_tag "application", params[:controller], :media => "all"
+  = javascript_include_tag "application", params[:controller]
+  = include_gon
+  = csrf_meta_tags
+body
+  .row
+    .col-md-6.col-md-offset-3
+      .header
+        nav
+          ul.nav.nav-pills.pull-right
+            li#menu-option-1.menu-option role="presentation"
+              = link_to 'Menu Option 1', '#'
+            li#menu-option-2.menu-option role="presentation"
+              = link_to 'Menu Option 2', '#'
+        h3.text-muted
+          i.glyphicon.glyphicon-music
+          | Application
+  .row
+    .col-md-6.col-md-offset-3
+      = yield
+  .row
+    .col-md-6.col-md-offset-3
+      footer.footer
+        p &copy; Ariel - 2015
