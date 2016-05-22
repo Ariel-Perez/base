@@ -1,8 +1,8 @@
 == README
 
-* Ruby v2.0.0p451
-
-* Bootstrap v3.3.4
+* Ruby v2.3.0p0
+* Rails v4.2.6
+* Bootstrap v3.3.6
 
 == Pending
 
